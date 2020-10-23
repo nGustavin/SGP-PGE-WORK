@@ -2,11 +2,49 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   width: 1645px;
-  height: 100vh;
-  margin-top: 50px;
+  padding: 8px;
+  height: 100%;
+  padding: 30px 8px;
+  position: relative;
+  overflow: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  
+  grid-auto-rows: 200px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 14px;
+
+ /*  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 860px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4652fd;
+  border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4652fd;
+}
 `
 
 export default Wrapper
