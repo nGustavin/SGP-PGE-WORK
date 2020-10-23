@@ -1,0 +1,11 @@
+* { 
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+h1, input, body {
+  font-family: 'Archivo', sans-serif;
+  color: #6F7390;
+}

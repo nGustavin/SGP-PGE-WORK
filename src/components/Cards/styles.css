@@ -1,0 +1,63 @@
+
+.card-container{
+  width: 400px;
+  height: 200px;
+  background: #BDC6E7;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  justify-content: center;
+  border-radius: 8px; 
+  position: absolute;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.card-container:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 2px rgb(67, 255, 152);
+}
+
+.flex-container{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  grid-template-rows: repeat(3, 70px);
+  grid-template-areas: 'IA TA'
+                       'IA QA'
+                       'IA AA';
+  position: absolute;
+  height: 210px;
+  width: 400px;
+  align-items: center;
+  overflow: hidden;
+  align-self: center;
+}
+
+.card-image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  grid-area: IA;
+  justify-self: center;
+}
+
+.title, .amount, .avaliable {
+  justify-self: flex-end;
+  align-self: center;
+  position: relative;
+  padding: 20px;
+}
+
+.title{
+  grid-area: TA;
+}
+
+.amount{
+  grid-area: QA;
+}
+
+.avaliable{
+  grid-area: AA;
+}
