@@ -12,8 +12,11 @@ export default function Landing() {
 
   return(
     <div className="landing-container">
+      
       <Header />
-      <CreateItemButton />
+       
+      <CreateItemButton landing/>
+
       <Wrapper>
         <Card />
         <Card />

@@ -6,9 +6,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px 20px;
-
+  position: absolute;
+  z-index: 10;
+  
 }
 
 .header .search-input{
@@ -46,5 +48,14 @@
 
 .header .header-title {
   font-size: 36;
+}
+
+.header .burger-sidebar{
+  color: white;
+  font-size: 24px;
+}
+
+.header .burger-sidebar:hover{
+  cursor:pointer;
 }
 

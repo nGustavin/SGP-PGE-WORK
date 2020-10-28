@@ -1,13 +1,21 @@
 import React from 'react'
-import { FiPlus } from 'react-icons/fi'
-import './styles.css'
+import {CreateItem, CreateItemIcon} from'./styles'
+import CreateItemSet from '../../pages/CreateItemSet/index'
+import { Link } from 'react-router-dom'
 
-export default function CreateItemButton() {
+interface Props{
+  landing?: boolean;
+}
+
+const CreateItemButton: React.FC<Props> = ({landing}) => {
   return(
-    <button className="create-item-button">
-      <FiPlus className="crosshair-icon"/>
-      <a href="#"></a>
-    </button>
+    <Link to="/create-set">
+    <CreateItem>
+      <CreateItemIcon className="crosshair-icon" />
+    </CreateItem>
+  </Link>
   )
 }
 
+export default CreateItemButton
+  
