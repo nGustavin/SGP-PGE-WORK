@@ -3,8 +3,8 @@ import { FiPlus } from 'react-icons/fi'
 
 
 export const CreateItem = styled.div`
-  width: 60px;
   height: 60px;
+  width: 60px;
   background: #00A3FF;
   border-radius: 24px;
   cursor: pointer;

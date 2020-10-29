@@ -15,7 +15,7 @@ export default function Landing() {
       
       <Header />
        
-      <CreateItemButton landing/>
+      <CreateItemButton/>
 
       <Wrapper>
         <Card />

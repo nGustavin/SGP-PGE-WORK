@@ -10,15 +10,22 @@ export const Container = styled.div<Props>`
    display: flex;
    flex-direction: row;
    align-items: center;
-   justify-content: ${(props)=> props.haveArrowLeft? 'space-between' : 'space-between'};
+   /* justify-content: ${(props)=> props.haveArrowLeft? 'space-between' : 'space-between'}; */
+   justify-content: space-between;
    padding: 0px 20px;
-   position: absolute;
+   position:fixed;
    z-index: 10;
+   
 
-   > .header-title{
+   > h1{
      color: white;
+     font-size: 16px;
    }
-
+   
+   > img{
+     cursor:pointer;
+     width: 50px;
+   }
 
    > .search-input{
     width: 1060px;

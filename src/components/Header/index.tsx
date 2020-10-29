@@ -11,7 +11,7 @@ const Header: React.FC<Props> = ({haveArrowLeft}) => {
   const {goBack} = useHistory()
   return(
     <Container haveArrowLeft={haveArrowLeft}>
-      {haveArrowLeft? <img src={arrowLeft} alt="monitor positivo" onClick={goBack}/> : <div style={{width: 40}}></div>}
+      {haveArrowLeft? <img src={arrowLeft} alt="monitor positivo" onClick={goBack}/> : <div style={{width: 50}}></div>}
       <input className="search-input" placeholder="Buscar items"/>
       <h1 className="header-title">SGP-PGE</h1>
     </Container>
@@ -20,6 +20,6 @@ const Header: React.FC<Props> = ({haveArrowLeft}) => {
 
 
 
-
+    
 
 export default Header
