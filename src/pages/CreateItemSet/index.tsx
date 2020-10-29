@@ -4,11 +4,12 @@ import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
 import {CreateItemWrapper, Container} from '../../styles/pages/createItemSet'
 
+
 export default function CreateItemSet() {
   return(
     <>
     <Container>
-    <Header />
+    <Header haveArrowLeft/>
     
     <CreateItemWrapper className="container">
       <div className="item-image"></div>

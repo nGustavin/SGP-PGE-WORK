@@ -1,12 +1,25 @@
 import React from 'react'
-import './styles.css'
-import Sidebar from '../Sidebar/index'
+import {Container} from './styles'
+import arrowLeft from '../../assets/Arrow2.svg'
+import { useHistory } from 'react-router-dom'
 
-export default function Header() { 
+export interface Props{
+  haveArrowLeft?: boolean 
+}
+
+const Header: React.FC<Props> = ({haveArrowLeft}) => {
+  const {goBack} = useHistory()
   return(
-    <div className="header">
+    <Container haveArrowLeft={haveArrowLeft}>
+      {haveArrowLeft? <img src={arrowLeft} alt="monitor positivo" onClick={goBack}/> : <div style={{width: 40}}></div>}
       <input className="search-input" placeholder="Buscar items"/>
-      <h1 className="header-title"></h1>
-    </div>
+      <h1 className="header-title">SGP-PGE</h1>
+    </Container>
   )
 }
+
+
+
+
+
+export default Header
