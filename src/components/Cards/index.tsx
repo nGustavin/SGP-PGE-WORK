@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function Card() {
   return(
-    <Link to="/create-set:id">
+    <Link to="/create-set">
       <div className="card-container">
         <div className="flex-container">
           <div className="image-container">
