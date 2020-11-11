@@ -1,8 +1,10 @@
 import React from 'react'
 import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
-import {CreateItemWrapper, Container} from '../../styles/pages/createItemSet'
-
+import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
+import Routes from '../../routes'
+import {CreateButton} from '../../styles/pages/createItem'
+import { Link } from 'react-router-dom'
 
 export default function CreateItemSet() {
   return(
@@ -59,10 +61,14 @@ export default function CreateItemSet() {
         <h2 className="avaliable">Disponivel:</h2>
         <h3 className="avaliable-values">63</h3>
       </div>
-
-      <button type="button" className="create-item" >
-        CRIAR NOVO ITEM
-      </button>
+      
+      
+        <Link to="/create-item" className="a-link">
+          <CreateButton>
+           <h1>CRIAR NOVO ITEM</h1>
+          </CreateButton>
+        </Link>
+      
       <CreateItemButton/>
     </CreateItemWrapper>
     </Container>

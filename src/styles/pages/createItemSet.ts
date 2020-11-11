@@ -9,6 +9,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  > .a-link{
+    text-decoration: none;
+  }
 `
 
 export const CreateItemWrapper = styled.div`
@@ -35,6 +38,7 @@ export const CreateItemWrapper = styled.div`
     color: white;
     font-weight: bold;
     box-shadow: 0px 0px 0px 2px #e8e8e8;
+    text-decoration: none;
 
     :hover{
       cursor: pointer;
