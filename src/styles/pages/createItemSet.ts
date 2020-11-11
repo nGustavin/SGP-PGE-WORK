@@ -12,7 +12,7 @@ export const Container = styled.div`
 `
 
 export const CreateItemWrapper = styled.div`
-  background: #1c2138;
+  background: #f0f0f0;
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
   width: 1645px;
   padding: 8px;
@@ -26,9 +26,27 @@ export const CreateItemWrapper = styled.div`
                        'BA BA';
   padding: 30px;
   
+  > .create-item{
+    background: #4652fd;
+    width: 310px;
+    height: 34px;
+    outline: none;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 0px 2px #e8e8e8;
+
+    :hover{
+      cursor: pointer;
+      background:#FFF;
+      box-shadow: 0px 0px 0px 2px black;
+      color: black;
+      
+    }
+  }
 
   > .item-image {
-    background: #FFF;
+    background: black;
     width: 300px;
     height: 300px;
     grid-area: IA;
@@ -39,7 +57,7 @@ export const CreateItemWrapper = styled.div`
 
   > .title {
     grid-area: TA;
-    color: #FFF;
+    color: black;
     font-size: 46px;
     align-self: center;
     justify-self: flex-start;
@@ -52,7 +70,7 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: white;
+    color: black;
     padding: 0px 250px;
     
     > h2 {
@@ -68,7 +86,7 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: white;
+    color: black;
     font-weight: 400;
   }
 
@@ -78,12 +96,12 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: white;
+    color: black;
     padding: 0px 230px;
 
 
     > .amount{
-      color: white;
+      color: black;
       font-weight: normal;
     }
 
@@ -95,10 +113,10 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
 
     > .avaliable{
-      color:white;
+      color:black;
       font-weight: normal;
     }
 

@@ -59,6 +59,10 @@ export default function CreateItemSet() {
         <h2 className="avaliable">Disponivel:</h2>
         <h3 className="avaliable-values">63</h3>
       </div>
+
+      <button type="button" className="create-item" >
+        CRIAR NOVO ITEM
+      </button>
       <CreateItemButton/>
     </CreateItemWrapper>
     </Container>
