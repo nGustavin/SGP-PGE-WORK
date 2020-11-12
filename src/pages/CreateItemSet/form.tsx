@@ -11,7 +11,7 @@ export default function ItemSetForm() {
     <Main>
       <TitleArea>
         <input type="button" className="send-image"/>
-        <input type="text" className="title-input" />
+        <input type="text" className="title-input" placeholder="Titulo"/>
       </TitleArea>
       <Form>
         <input type="text" className="room-input" placeholder="Sala"/> 
@@ -21,7 +21,7 @@ export default function ItemSetForm() {
       </Form>
     </Main>
     </Container> 
-    
+
     </>
   )
 }
