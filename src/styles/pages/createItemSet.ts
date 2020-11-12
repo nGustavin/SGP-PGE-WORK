@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const CreateItemWrapper = styled.div`
   background: #f0f0f0;
-  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
   width: 1645px;
   padding: 8px;
   height: 100%;
@@ -64,8 +64,11 @@ export const CreateItemWrapper = styled.div`
     color: black;
     font-size: 46px;
     align-self: center;
-    justify-self: flex-start;
+    text-align: center;
+    justify-self: center;
     font-weight: normal;
+    text-decoration: none;
+    margin-bottom: 20px;
   }
 
   > #room-container{

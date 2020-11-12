@@ -2,8 +2,6 @@ import React from 'react'
 import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
 import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
-import Routes from '../../routes'
-import {CreateButton} from '../../styles/pages/createItem'
 import { Link } from 'react-router-dom'
 
 export default function CreateItemSet() {
@@ -13,10 +11,14 @@ export default function CreateItemSet() {
     <Container>
     
     <CreateItemWrapper className="container">
-      <div className="item-image"></div>
-      <h1 className="title">Monitor Dell</h1>
+      <div className="item-image"> </div>
+      <h1 className="title">Monitor Dell 
+
+       
+
+      </h1>
       <div id="room-container">
-        <h2 className="room">Salas: </h2>
+        <h2 className="room">Salas: 290</h2>
        
       </div>
       <div id="roomValues-container">
@@ -63,11 +65,6 @@ export default function CreateItemSet() {
       </div>
       
       
-        <Link to="/create-item" className="a-link">
-          <CreateButton>
-           <h1>CRIAR NOVO ITEM</h1>
-          </CreateButton>
-        </Link>
       
       <CreateItemButton/>
     </CreateItemWrapper>
