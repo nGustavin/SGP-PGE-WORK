@@ -11,6 +11,7 @@ function Routes(){
         <Route path="/" exact component={Landing}/>
         <Route path="/view-set" component={CreateItem}/>
         <Route path="/create-item-set" component={CreateItemSet}/>
+        <Route path="/create-item" component={CreateItemSet}/>
       </Switch>
     </BrowserRouter>
   )

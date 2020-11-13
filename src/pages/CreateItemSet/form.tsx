@@ -14,10 +14,14 @@ export default function ItemSetForm() {
         <input type="text" className="title-input" placeholder="Titulo"/>
       </TitleArea>
       <Form>
-        <input type="text" className="room-input" placeholder="Sala"/> 
-        <input type="text" className="amount-input" placeholder="Quantidade"/> 
-        <input type="text" className="avaliable-input" placeholder="Marca"/> 
-        <input type="text" className="patrimony-input" placeholder="Patrimonio"/> 
+        <input type="text" placeholder="Salas"/> 
+        <input type="text" placeholder="Quantidade"/> 
+        <input type="text" placeholder="Disponivel"/> 
+        <input type="text" placeholder=""/>
+        <div className="send-data-container">
+          <input type="button" className="add-field" value="Adicionar Campo Personalizado" />
+          <input type="button" className="add-field" value="Cadastrar modelo de Item" />
+        </div>
       </Form>
     </Main>
     </Container> 

@@ -7,9 +7,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #060930;
 
-  input{
+  input[type=text]{
     background: white;
     width: 500px;
     height: 40px;
@@ -19,13 +18,19 @@ export const Container = styled.div`
     font-weight: bold;
     outline: none;
     transition: 0.3s;
+    :hover{
+        box-shadow: 0px 0px 0px 2px black;
+     
+      }
     :focus{
-      box-shadow: 0px 0px 0px 2px black;
+      box-shadow: 0px 0px 0px 2px #4652fd;
      
       ::placeholder{
         transition: 0.3s;
         color: white;
       }
+
+      
     }
 
     ::placeholder{
@@ -45,11 +50,11 @@ export const Main = styled.div`
   height: 100%;
   max-height: 100%;
   position: absolute;
-  box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.5);
 `
 
 export const TitleArea = styled.div`
-  background: #333456;
+  background: #e0e0e0;
   width: 100%;
   height: 1000px;
   margin-top: 70px;
@@ -60,7 +65,7 @@ export const TitleArea = styled.div`
   
 
   > .send-image{
-    background: blue;
+    background: #FFF;
     width: 400px;
     height: 400px;
     border-radius: 8px;
@@ -73,7 +78,7 @@ export const TitleArea = styled.div`
   }
 `
 export const Form = styled.div`
-  background: #333456;
+  background: #e0e0e0;
   width: 100%;
   height: 100%;
   position: relative;
@@ -84,5 +89,40 @@ export const Form = styled.div`
   justify-content: center;
   gap: 50px;
   
+  > .send-data-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    bottom: 0;
+    background: none;
+    width: auto;
+    height: 100px;
+    
+
+    > input.add-field{
+      background: #4652fd;
+      width: 250px;
+      height: 40px;
+      color: rgba(255, 255, 255, 1);
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      box-shadow: 0px 0px 0px 2px white; 
+      transition: 0.3s; 
+      outline: none;
+      :hover{
+        background: white;
+        box-shadow: 0px 0px 0px 2px #4652fd; 
+        color: black;
+      }
+      :focus{
+
+      }
+    }
+  }
+
   } 
 `
