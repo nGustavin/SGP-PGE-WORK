@@ -38,7 +38,6 @@ export const Container = styled.div`
       font-weight: bold;
       font-size: 14px; 
     } 
-
 `
 
 
@@ -119,7 +118,7 @@ export const Form = styled.div`
         color: black;
       }
       :focus{
-
+        
       }
     }
   }
