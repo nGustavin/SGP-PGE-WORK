@@ -12,6 +12,8 @@ export default function ItemSetForm() {
     )
   }
 
+  var a = "criou novo campo"
+
   handleAddField()
   return(
     <>
@@ -28,7 +30,7 @@ export default function ItemSetForm() {
         <input type="text" placeholder="Disponivel"/> 
         <input type="text" placeholder=""/>
         <div className="send-data-container">
-          <input type="button" className="add-field" value="Adicionar Campo Personalizado" />
+          <input type="button" className="add-field" value="Adicionar Campo Personalizado" onClick={() => {return(console.log(a))}}/>
           <input type="button" className="add-field" value="Cadastrar modelo de Item" />
         </div>
       </Form>
