@@ -20,10 +20,13 @@ export const CreateItemWrapper = styled.div`
   width: 1645px;
   padding: 8px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 500px 200px 200px 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'IA TA'
+                       'RA RV'
+                       'AA DA'
+                       'BA BA';
   padding: 30px;
   
   > .create-item{
