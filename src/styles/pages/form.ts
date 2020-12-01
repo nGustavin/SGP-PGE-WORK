@@ -92,16 +92,11 @@ export const Form = styled.div`
   
   
   > .send-data-container {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    
-    bottom: 0;
-    background: none;
-    width: auto;
-    height: 100px;
     
 
     > input.add-field{
