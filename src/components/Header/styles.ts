@@ -7,6 +7,7 @@ export const Container = styled.div<Props>`
    width: 100vw;
    height: 70px;
    background: #4652fd;
+   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
    display: flex;
    flex-direction: row;
    align-items: center;

@@ -11,7 +11,7 @@ export const Container = styled.div`
   input[type=text]{
     background: white;
     width: 500px;
-    height: 40px;
+    height: 50px;
     padding: 0px 10px;
     color: black;
     font-size: 14px;
@@ -45,25 +45,24 @@ export const Container = styled.div`
 export const Main = styled.div`
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 1645px;
   height: 100%;
   max-height: 100%;
   position: absolute;
-  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.2);
 
 `
 
 export const TitleArea = styled.div`
-  background: #e0e0e0;
-  width: 100%;
-  height: 1000px;
-  margin-top: 70px;
+  background: #4652fd;
+  width: 800px;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 310px 0px 200px;
-
+  justify-content: center;
+  box-shadow: 15px 0px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 6;
 
   > .send-image{
     background: #FFF;
@@ -72,22 +71,18 @@ export const TitleArea = styled.div`
     border-radius: 8px;
   }
 
-  .title-input{
-    width: 400px;
-    height: 50px;
-    
-  }
+  
 `
 export const Form = styled.div`
-  background: #e0e0e0;
+  background: #4652fd;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 50px;
   
   
