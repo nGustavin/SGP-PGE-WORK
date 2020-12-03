@@ -2,7 +2,7 @@ import React from 'react'
 import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
 import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 export default function CreateItemSet() {
   return(

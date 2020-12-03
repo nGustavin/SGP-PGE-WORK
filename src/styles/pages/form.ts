@@ -7,6 +7,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+
 
   input[type=text]{
     background: white;
@@ -28,18 +30,11 @@ export const Container = styled.div`
       ::placeholder{
         transition: 0.3s;
         color: white;
-      }
-
-      
+      }  
     }
+  } 
 
-    ::placeholder{
-      color: rgba(0, 0, 0, 0.5);
-      font-weight: bold;
-      font-size: 14px; 
-    } 
-`
-
+  ` 
 
 
 export const Main = styled.div`
@@ -51,7 +46,8 @@ export const Main = styled.div`
   max-height: 100%;
   position: absolute;
   box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.2);
-
+  
+  
 `
 
 export const TitleArea = styled.div`
@@ -69,25 +65,78 @@ export const TitleArea = styled.div`
     width: 400px;
     height: 400px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   
 `
 export const Form = styled.div`
   background: #4652fd;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 50px;
+  padding: 100px 0px 0px 0px;
+ 
+  section{
+    overflow-y: scroll;
+
+    padding: 5px;
+    margin-bottom:60px;
+    /* width */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+    >h1{
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 35px;
+    }
+
+  }
+
+  .field-container{
+      > h1 {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      z-index: 10;
+      margin: 10px 0px;
+    }
+  }
+  .two-field-container{
+    display: flex;
+    gap: 10px;
+    input{
+      width: 245px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      > h1 {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        z-index: 10;
+        margin: 10px 0px;
+      }
+    }
+  }
+  
   
   
   > .send-data-container {
-    position: relative;
+    position: absolute;
+    bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +156,6 @@ export const Form = styled.div`
       outline: none;
       :hover{
         background: white;
-        box-shadow: 0px 0px 0px 2px #4652fd; 
         color: black;
       }
       :focus{
@@ -115,8 +163,9 @@ export const Form = styled.div`
       }
     }
   }
-
-  } 
+ 
 `
+
+
 
 

@@ -13,21 +13,49 @@ export default function ItemSetForm() {
     <Header haveArrowLeft/>
     <Main>
       <TitleArea>
-        <input type="button" className="send-image"/>
+        <div className="send-image">
+          <input type="file" className="send-image"/>
+        </div>
+        {/* <label  ref="file"> Choose a File </label> */}
       </TitleArea>
       <Form id = "form-container">
-        <input type="text" className="title-input" placeholder="Titulo"/>
-        <input type="text" placeholder="Salas"/> 
-        <input type="text" placeholder="Quantidade"/> 
-        <input type="text" placeholder="Disponivel"/> 
+
+        <section className="scroll-container">
+          <h1>Cadastrar Set de item</h1>
+
+          <div className="field-container">
+            <h1>Nome</h1>
+            <input type="text" />
+          </div>
+
+          <div className="two-field-container">
+            <div>
+              <h1>Disponível</h1>
+              <input type="text"/>
+          </div>
+
+            <div>
+              <h1>Quantidade</h1>
+              <input type="text"/>
+            </div>
+          </div>
+        
+          <div className="field-container">
+            <h1>Descrição</h1>
+            <input type="text"/>
+          </div>
+
+        </section>
+
         <div className="send-data-container">
           <input type="button" className="add-field" value="Adicionar Campo Personalizado" onClick={() => {console.log('hello')}}/>
           <input type="button" className="add-field" value="Cadastrar modelo de Item" />
         </div>
+
       </Form>
     </Main>
     </Container> 
     </>
   )
 }
-
+ 

@@ -10,7 +10,7 @@ export default function Card() {
       <div className="card-container">
         <div className="flex-container">
           <div className="image-container">
-            <img src={monitorImage} alt="monitor image" className="card-image"/>
+            <img src={monitorImage} alt="monitor" className="card-image"/>
           </div>
           <span className="title">Monitor Dell</span>
           <strong className="amount">Quantidade: <span>203</span> </strong>
