@@ -21,7 +21,7 @@ export default function ItemSetForm() {
       <Form id = "form-container">
 
         <section className="scroll-container">
-          <h1>Cadastrar Set de item</h1>
+          <h1 className="form-title">Cadastrar Set de item</h1>
 
           <div className="field-container">
             <h1>Nome</h1>
