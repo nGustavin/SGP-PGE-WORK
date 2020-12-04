@@ -3,9 +3,9 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   width: 1645px;
   padding: 8px;
-  height: 100%;
+  height: 100vh;
   padding: 0px 8px;
-  margin-top: 90px;
+  margin: 90px 0px 10px 0px;
   position: relative;
   overflow: auto;
   display: grid;

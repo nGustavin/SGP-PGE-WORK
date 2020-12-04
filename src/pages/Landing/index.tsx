@@ -19,10 +19,8 @@ export default function Landing() {
        
       <CreateItemButton/>
 
-      <Wrapper>
         <Card />
       
-      </Wrapper>
     </div>
   )
 }
