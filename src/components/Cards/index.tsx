@@ -10,6 +10,9 @@ interface Set {
   name: string;
   amount: number;
   avaliable: number;
+  // images: Array<{
+  //   url: string;
+  // }>
 }
 
 function Card() {
@@ -33,7 +36,7 @@ function Card() {
           <div className="card-container" key={itemSet.id}>
             <div className="flex-container">
               <div className="image-container">
-                <img src={monitorImage} alt="monitor" className="card-image"/>
+                <img src={monitorImage} alt={itemSet.name} className="card-image"/>
               </div>
             <span className="title"> {[itemSet.name]} </span>
             <strong className="amount">Quantidade: <span> {[itemSet.amount]} </span> </strong>
@@ -44,8 +47,10 @@ function Card() {
         )
       })}
     </Wrapper>
-  
   )
 }
 
 export default Card
+
+// RH Dinheiro do consorcio 
+// itemSet.images[0].url
