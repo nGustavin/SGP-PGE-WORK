@@ -25,14 +25,14 @@ function Card() {
     api.get('item-sets').then(response => {
       setItemsets(response.data)
     })
-  }, [itemSets])
+  }, [])
   
   return(
     
       <Wrapper>
       {itemSets.map(itemSet => {
         return(
-          <Link to="/view-set">
+          <Link to={`/view-set/${itemSet.id}`}>
           <div className="card-container" key={itemSet.id}>
             <div className="flex-container">
               <div className="image-container">

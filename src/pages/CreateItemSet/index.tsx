@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
+import api from '../../services/api'
 import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
 // import { Link } from 'react-router-dom'
 
+interface Set {
+  id: number;
+  name: string;
+  amount: number;
+  avaliable: number;
+}
+
+interface ItemParams{
+  id: string
+}
+
 export default function CreateItemSet() {
+
+  const params = useParams<ItemParams>()
+
+  const [ itemSets, setItemSets ] = useState<Set>()
+
+  
+
+  useEffect(() => {
+    api.get(`item-sets/${params.id}`).then(response => {
+      setItemSets(response.data)
+    })
+  }, [params.id])
+
+  if(!itemSets) {
+    return <p>Carregando...</p>
+  }
+
   return(
     <>
     <Header haveArrowLeft/>
@@ -12,7 +42,7 @@ export default function CreateItemSet() {
     
     <CreateItemWrapper className="container">
       <div className="item-image"> </div>
-      <h1 className="title">Monitor Dell 
+      <h1 className="title"> {  }
 
        
 
