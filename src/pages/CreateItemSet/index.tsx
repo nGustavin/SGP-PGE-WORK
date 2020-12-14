@@ -21,19 +21,16 @@ export default function CreateItemSet() {
 
   const params = useParams<ItemParams>()
 
-  const [ itemSets, setItemSets ] = useState<Set>()
+  const [ itemSets, setItemSets ] = useState<Set[]>([])
 
   
 
   useEffect(() => {
-    api.get(`item-sets/${params.id}`).then(response => {
+    api.get(`item-sets/`).then(response => {
       setItemSets(response.data)
     })
   }, [params.id])
 
-  if(!itemSets) {
-    return <p>Carregando...</p>
-  }
 
   return(
     <>
@@ -41,58 +38,34 @@ export default function CreateItemSet() {
     <Container>
     
     <CreateItemWrapper className="container">
-      <div className="item-image"> </div>
-      <h1 className="title"> {  }
-
-       
-
-      </h1>
-      <div id="room-container">
-        <h2 className="room">Salas: 290</h2>
-       
-      </div>
-      <div id="roomValues-container">
-      <p className="room-values"> 
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-        </p>
-      </div>
-      <div id="amount-container">
-        <h2 className="amount">Quantidade:</h2>
-        <h3 className="amount-values">524</h3>
-      </div>
-      <div id="avaliable-container">
-        <h2 className="avaliable">Disponivel:</h2>
-        <h3 className="avaliable-values">63</h3>
-      </div>
+      {itemSets.forEach(itemSet => {
+        return(
+          <>
+            <div className="item-image"> { [itemSet.name] } </div>
+            <h1 className="title"> Monito </h1>
+            <div id="room-container">
+              <h2 className="room">Salas: 290</h2>
+            
+            </div>
+            <div id="roomValues-container">
+            <p className="room-values"> 
+                  105 103 102 203 402 504 606 702
+                  105 103 102 203 402 504 606 702
+                  105 103 102 203 402 504 606 702
+                
+              </p>
+            </div>
+            <div id="amount-container">
+              <h2 className="amount">Quantidade:</h2>
+              <h3 className="amount-values">524</h3>
+            </div>
+            <div id="avaliable-container">
+              <h2 className="avaliable">Disponivel:</h2>
+              <h3 className="avaliable-values">63</h3>
+            </div>
+            </>
+        )
+      })}
       
       
       

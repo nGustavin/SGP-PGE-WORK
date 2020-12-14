@@ -17,7 +17,5 @@ const Header: React.FC<Props> = ({haveArrowLeft}) => {
     </Container>
   )
 }
-  
-  
-  
-  export default Header
+    
+export default Header

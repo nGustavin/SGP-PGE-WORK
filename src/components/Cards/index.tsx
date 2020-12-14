@@ -32,7 +32,7 @@ function Card() {
       <Wrapper>
       {itemSets.map(itemSet => {
         return(
-          <Link to={`/view-set/${itemSet.id}`}>
+          <Link to={`/item-sets/${itemSet.id}`}>
           <div className="card-container" key={itemSet.id}>
             <div className="flex-container">
               <div className="image-container">

@@ -89,7 +89,7 @@ export default function ItemSetForm() {
                   type="text"
                   value={amount}
                   onChange={e => setAmount(e.target.value)}  
-                />
+                />  
               </div>
 
               <div className="field-container">
