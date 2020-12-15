@@ -10,7 +10,7 @@ function Routes(){
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Landing}/>
-        <Route path="/item-sets" component={CreateItemSet}/>
+        <Route path="/item-sets/:id" component={CreateItemSet}/>
         <Route path="/create-item-set" component={ItemSetForm}/>
         <Route path="/create-item" component={CreateItem}/>
       </Switch>

@@ -7,29 +7,30 @@ import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
 // import { Link } from 'react-router-dom'
 
 interface Set {
-  id: number;
   name: string;
   amount: number;
   avaliable: number;
 }
 
 interface ItemParams{
-  id: string
+  id: string;
 }
 
 export default function CreateItemSet() {
 
   const params = useParams<ItemParams>()
 
-  const [ itemSets, setItemSets ] = useState<Set[]>([])
+  const [ itemSet, setItemSet ] = useState<Set>() 
 
   
 
   useEffect(() => {
-    api.get(`item-sets/`).then(response => {
-      setItemSets(response.data)
+    api.get(`item-sets/${params.id}`).then(response => {
+      setItemSet(response.data)  
     })
   }, [params.id])
+
+
 
 
   return(
@@ -38,38 +39,36 @@ export default function CreateItemSet() {
     <Container>
     
     <CreateItemWrapper className="container">
-      {itemSets.forEach(itemSet => {
-        return(
-          <>
-            <div className="item-image"> { [itemSet.name] } </div>
-            <h1 className="title"> Monito </h1>
-            <div id="room-container">
-              <h2 className="room">Salas: 290</h2>
-            
-            </div>
-            <div id="roomValues-container">
-            <p className="room-values"> 
-                  105 103 102 203 402 504 606 702
-                  105 103 102 203 402 504 606 702
-                  105 103 102 203 402 504 606 702
-                
-              </p>
-            </div>
-            <div id="amount-container">
-              <h2 className="amount">Quantidade:</h2>
-              <h3 className="amount-values">524</h3>
-            </div>
-            <div id="avaliable-container">
-              <h2 className="avaliable">Disponivel:</h2>
-              <h3 className="avaliable-values">63</h3>
-            </div>
-            </>
-        )
-      })}
+      <div className="item-image"> </div>
+      <h1 className="title"> {itemSet?.name} </h1>
+      <div id="room-container">
+        <h2 className="room">Salas: 290</h2>
+       
+      </div>
+      <div id="roomValues-container">
+      <p className="room-values"> 
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+            105 103 102 203 402 504 606 702
+     
+        </p>
+      </div>
+      <div id="amount-container">
+        <h2 className="amount">Quantidade:</h2>
+        <h3 className="amount-values">{itemSet?.amount}</h3>
+      </div>
+      <div id="avaliable-container">
+        <h2 className="avaliable">Disponivel:</h2>
+        <h3 className="avaliable-values">{itemSet?.avaliable}</h3>
+      </div>
       
       
       
-      <CreateItemButton/>
     </CreateItemWrapper>
     </Container>
     </>

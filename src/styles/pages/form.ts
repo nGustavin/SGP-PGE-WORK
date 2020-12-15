@@ -112,7 +112,7 @@ export const TitleArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 15px 0px 20px 5px rgba(0, 0, 0, 0.3);
+  outline: 0.1px solid white;
   z-index: 6;
 
   > .send-image{
