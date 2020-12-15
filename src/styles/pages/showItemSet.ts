@@ -15,7 +15,7 @@ export const Container = styled.div`
 `
 
 export const CreateItemWrapper = styled.div`
-  background: #f0f0f0;
+  background: #4652fd;
   box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
   width: 1645px;
   padding: 8px;
