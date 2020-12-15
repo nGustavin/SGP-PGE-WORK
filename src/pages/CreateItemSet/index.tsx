@@ -47,7 +47,7 @@ export default function CreateItemSet() {
     let rooms = 0
     items.map(item => rooms+=1)
 
-    return (rooms)
+    return (<h3>{rooms}</h3>)
   }
 
   return(
@@ -68,8 +68,7 @@ export default function CreateItemSet() {
               return(
                 <h1 key={item.id}>{item.room}</h1>
               )
-            })}
-     
+          })}
       </div>
       </div>
       <div id="amount-container">

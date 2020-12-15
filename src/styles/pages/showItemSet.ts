@@ -88,7 +88,7 @@ export const CreateItemWrapper = styled.div`
     color: white;
     padding: 0px 250px;
     
-    > h2 {
+    > .room {
       font-weight: 400;
     }
   }
@@ -114,12 +114,11 @@ export const CreateItemWrapper = styled.div`
         justify-content: center;
         margin: 3px 3px;
         color: white;
-        background: black;
+        background: rgba(255, 255 ,255 , 0.1);
         width: 70px;
         height: 35px;
         border-radius: 20px;
         font-size: 20px;
-
       }
     }
   }

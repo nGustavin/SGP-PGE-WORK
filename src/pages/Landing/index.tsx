@@ -15,9 +15,7 @@ export default function Landing() {
     <div className="landing-container">
       
       <Header />
-       
       <CreateItemButton/>
-
       <Card />
       
     </div>
