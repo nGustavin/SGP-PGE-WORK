@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction:column;
   align-items: center;
   justify-content: center;
+  
 
   input[type=text]{
     background: white;
@@ -35,6 +36,7 @@ export const Container = styled.div`
 `
 
 export const Main = styled.div`
+
   background: #4652fd;
   width: 1644px;
   height: 100%;
@@ -45,7 +47,85 @@ export const Main = styled.div`
   justify-content: flex-start;
   padding: 90px 0px;
 
+  
+
   > #form{
+
+  
+    .droplist-container{
+
+      > label{
+        margin-bottom: 4px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 15px;
+      color:white;
+      font-size: 20px;
+      margin-bottom: 14px;
+      
+      > select{
+        background: white;
+        width: 500px;
+        height: 50px;
+        padding: 0px 10px;
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        outline: none;
+        transition: 0.3s;
+        border-radius: 4px;
+        :hover{
+        box-shadow: 0px 0px 0px 2px black;
+     
+        }
+       :focus{
+       box-shadow: 0px 0px 0px 2px black;
+     
+        ::placeholder{
+        transition: 0.3s;
+        color: white;
+        }  
+      }
+        >option{
+          height: 50px;
+          position: absolute;
+          font-size: 15px;
+          line-height: 50px;
+          color: rgba(0, 0, 0, 0.8);
+          background: #FFF;
+          padding: 10px 10px;
+        }
+      }
+    }
+
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      border-radius: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: none;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: white;
+      transition: 0.2s;
+      border-radius: 40px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      transition: 0.2s;
+      background: rgba(255, 255, 255, 0.6);
+    }
     background: #4652fd;
     width: 100%;
     height: 100%;

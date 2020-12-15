@@ -9,8 +9,6 @@ export const Container = styled.div`
   align-items: center;
   
   
-
-
   input[type=text]{
     background: white;
     width: 500px;
@@ -60,6 +58,30 @@ export const Main = styled.div`
     justify-content: flex-start;
     padding: 100px 0px 50px 0px;
     overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      border-radius: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: none;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: white;
+      transition: 0.2s;
+      border-radius: 40px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      transition: 0.2s;
+      background: rgba(255, 255, 255, 0.6);
+    }
 
     .field-container{
       display: flex;

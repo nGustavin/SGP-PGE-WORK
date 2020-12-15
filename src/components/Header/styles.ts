@@ -16,7 +16,9 @@ export const Container = styled.div<Props>`
    padding: 0px 20px;
    position:fixed;
    z-index: 10;
-   
+   > #sets .droplist{
+     background: red;
+   }
 
    > h1{
      color: white;
@@ -28,7 +30,7 @@ export const Container = styled.div<Props>`
      width: 50px;
    }
 
-   > .search-input{
+   > #search-input{
     width: 1060px;
     height: 36px;
     background: #f5f5ff;

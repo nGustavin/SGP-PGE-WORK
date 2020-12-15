@@ -1,17 +1,22 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import Header from '../../components/Header/index'
 import api from '../../services/api'
 import {Container, Main} from '../../styles/pages/createItem'
 
 // onSubmit={onSubmit}
+interface item{
+  name: string;
+  id: string;
+}
+
 
 export default function CreateItem() { 
 
 
-  const [ patrimony, setPatrimony] = useState('')
-  const [ about, setAbout] = useState('')
-  const [ room, setRoom] = useState('')
-  const [customFields, setCustomFields ] = useState('')
+  const [ patrimony, setPatrimony ] = useState('')
+  const [ about, setAbout ] = useState('')
+  const [ room, setRoom ] = useState('')
+  const [ customFields, setCustomFields ] = useState('')
   // const [ avaliable, setAvaliable] = useState('')
 
   async function onSubmit(event: FormEvent){
@@ -40,6 +45,14 @@ export default function CreateItem() {
 
   }
 
+  const [ itemSets, setItemsets ] = useState<item[]>([])
+
+  useEffect(() => {
+    api.get('item-sets').then(response => {
+      setItemsets(response.data)
+    })
+  }, [])
+
 
   return(
     <>
@@ -48,6 +61,21 @@ export default function CreateItem() {
       
         <Main>
         <form id="form" onSubmit={onSubmit}>
+        <div className="droplist-container">
+
+        <label className="droplist"> Choose a Set </label>
+
+        <select name="pets" id="set-select">
+          {itemSets.map( itemSet => {
+            return(
+              <option key={itemSet.id} value={itemSet.name}> {itemSet.name} </option>
+            )
+          }) }
+            
+           
+        </select>
+        </div>
+        
 
           <div className="field-container">
             <label>Patrimonio</label>

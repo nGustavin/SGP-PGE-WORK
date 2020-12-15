@@ -103,11 +103,37 @@ export const CreateItemWrapper = styled.div`
     justify-content: flex-start;
     font-weight: 400;
 
+    ::-webkit-scrollbar {
+      width: 6px;
+      border-radius: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: none;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: white;
+      transition: 0.2s;
+      border-radius: 40px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      transition: 0.2s;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
     >div {
       display: grid;
       grid-template-rows:  auto;
       grid-template-columns: repeat(9, 1fr);
       margin: 3px 3px;
+
+      
       > h1{
         display: flex;
         align-items: center;
