@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import CreateItemButton from '../../components/CreateItemButton'
 import Header from '../../components/Header'
 import api from '../../services/api'
-import {CreateItemWrapper, Container,} from '../../styles/pages/createItemSet'
+import {CreateItemWrapper, Container,} from '../../styles/pages/showItemSet'
 // import { Link } from 'react-router-dom'
 
 interface Set {
