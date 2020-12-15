@@ -18,14 +18,20 @@ export const Container = styled.div`
     font-weight: bold;
     outline: none;
     transition: 0.3s;
+    border-radius: 4px;
     :hover{
         box-shadow: 0px 0px 0px 2px black;
      
       }
     :focus{
-      box-shadow: 0px 0px 0px 2px #4652fd;
-    } 
-  }
+      box-shadow: 0px 0px 0px 2px black;
+     
+      ::placeholder{
+        transition: 0.3s;
+        color: white;
+      }  
+    }
+  } 
 `
 
 export const Main = styled.div`
@@ -39,61 +45,82 @@ export const Main = styled.div`
   justify-content: flex-start;
   padding: 90px 0px;
 
-  > section{
+  > #form{
+    background: #4652fd;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 50px 0px;
     overflow-y: scroll;
-    padding: 5px;
-    
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    
-    >h1{
-      color: white;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      font-size: 35px;
-    }
 
     .field-container{
-      > h1 {
-      color: white;
-      font-family: 'Roboto', sans-serif;
-      font-size: 18px;
-      z-index: 10;
-      margin: 10px 0px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      label{
+        color:white;
+        font-size: 20px;
+        margin-bottom: 4px;
       }
-    } 
+    }
+
+    .submit-container{
+      position: absolute;
+      bottom: 10px;      
+
+      button{
+        height: 40px;
+        width: 200px;
+        color: white;
+        border-radius: 4px;
+        background: none;
+        box-shadow: 0px 0px 0px 2px white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.2s;
+
+        :hover{
+          background: white;
+          color: black;
+          cursor: pointer;
+        }
+      }
+
+      button + button{
+        margin-left: 50px;
+      }
+    }
   }
 
   
-  > .send-data-container {
-    position: absolute;
-    bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    
+  > .submit-container{
+      position: absolute;
+      bottom: 10px;      
 
-    > input.add-field{
-      background: #4652fd;
-      width: 250px;
-      height: 40px;
-      color: rgba(255, 255, 255, 1);
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 15px;
-      box-shadow: 0px 0px 0px 2px white; 
-      transition: 0.3s; 
-      outline: none;
-      :hover{
-        background: white;
-        color: black;
+      button{
+        height: 40px;
+        width: 200px;
+        color: white;
+        border-radius: 4px;
+        background: none;
+        box-shadow: 0px 0px 0px 2px white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.2s;
+
+        :hover{
+          background: white;
+          color: black;
+          cursor: pointer;
+        }
       }
-      :focus{
-        
+
+      button + button{
+        margin-left: 50px;
       }
     }
-  }
 `

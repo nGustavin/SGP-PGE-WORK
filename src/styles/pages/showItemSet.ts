@@ -12,6 +12,33 @@ export const Container = styled.div`
   > .a-link{
     text-decoration: none;
   }
+
+  .submit-container{
+      position: absolute;
+      bottom: 10px;      
+
+      button{
+        height: 40px;
+        width: 200px;
+        color: white;
+        border-radius: 4px;
+        background: none;
+        box-shadow: 0px 0px 0px 2px white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.2s;
+
+        :hover{
+          background: white;
+          color: black;
+          cursor: pointer;
+        }
+      }
+
+      button + button{
+        margin-left: 50px;
+      }
+    }
 `
 
 export const CreateItemWrapper = styled.div`
@@ -31,7 +58,7 @@ export const CreateItemWrapper = styled.div`
   
 
   > .item-image {
-    background: black;
+    background: white;
     width: 300px;
     height: 300px;
     grid-area: IA;
@@ -42,7 +69,7 @@ export const CreateItemWrapper = styled.div`
 
   > .title {
     grid-area: TA;
-    color: black;
+    color: white;
     font-size: 46px;
     align-self: center;
     text-align: center;
@@ -58,7 +85,7 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: black;
+    color: white;
     padding: 0px 250px;
     
     > h2 {
@@ -74,8 +101,27 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: black;
     font-weight: 400;
+
+    >div {
+      display: grid;
+      grid-template-rows:  auto;
+      grid-template-columns: repeat(9, 1fr);
+      margin: 3px 3px;
+      > h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 3px 3px;
+        color: white;
+        background: black;
+        width: 70px;
+        height: 35px;
+        border-radius: 20px;
+        font-size: 20px;
+
+      }
+    }
   }
 
   > #amount-container{
@@ -84,12 +130,12 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: black;
+    color: white;
     padding: 0px 230px;
 
 
     > .amount{
-      color: black;
+      color: white;
       font-weight: normal;
     }
 
@@ -101,10 +147,10 @@ export const CreateItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: white;
 
     > .avaliable{
-      color:black;
+      color:white;
       font-weight: normal;
     }
 

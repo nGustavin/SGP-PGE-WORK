@@ -1,34 +1,101 @@
-import React from 'react'
+import React, { FormEvent, useState } from 'react'
 import Header from '../../components/Header/index'
+import api from '../../services/api'
 import {Container, Main} from '../../styles/pages/createItem'
 
+// onSubmit={onSubmit}
+
 export default function CreateItem() { 
+
+
+  const [ patrimony, setPatrimony] = useState('')
+  const [ about, setAbout] = useState('')
+  const [ room, setRoom] = useState('')
+  const [customFields, setCustomFields ] = useState('')
+  // const [ avaliable, setAvaliable] = useState('')
+
+  async function onSubmit(event: FormEvent){
+
+    event.preventDefault()
+
+    console.log({
+      patrimony,
+      about,
+      // avaliable,
+      room,
+      customFields
+    })
+
+    const data = new FormData()
+
+    data.append('patrimony', patrimony)
+    data.append('about', about)
+    // data.append('avaliable', avaliable)
+    data.append('room', room)
+    data.append('customFields', customFields)
+
+    await api.post('items', data)
+
+    alert('Cadastro realizado com sucesso!')
+
+  }
+
+
   return(
     <>
       <Header/>
       <Container>
       
         <Main>
-          <section className="form-container">
-            <h1 className="form-title">Cadastrar item</h1>
+        <form id="form" onSubmit={onSubmit}>
 
-            <div className="field-container">
-              <h1>Descrição</h1>
-              <input type="text" />
-            </div>
-            <div className="field-container">
-              <h1>Patrimonio</h1>
-              <input type="text" />
-            </div>
-            <div className="field-container">
-              <h1>Sala</h1>
-              <input type="text" />
-            </div>
-        </section>
-        <div className="send-data-container">
-          <input type="button" className="add-field" value="Adicionar Campo Personalizado" onClick={() => {console.log('hello')}}/>
-          <input type="button" className="add-field" value="Cadastrar modelo de Item" />
-        </div>
+          <div className="field-container">
+            <label>Patrimonio</label>
+            <input
+              name="patrimony"
+              type="text"
+              value={patrimony}
+              onChange={e => setPatrimony(e.target.value)}  
+            />
+          </div>
+
+          <div className="field-container">
+            <label>Descricao</label>
+            <input
+              name="about"
+              type="text"
+              value={about}
+              onChange={e => setAbout(e.target.value)}
+            />
+          </div>
+
+          <div className="field-container">
+            <label>Sala</label>
+            <input
+              name="room"
+              type="text"
+              value={room}
+              onChange={e => setRoom(e.target.value)}  
+              
+            />
+          </div>
+          <div className="field-container">
+            <label>Campo Personalizado</label>
+            <input
+              name="customFields"
+              type="text"
+              value={customFields}
+              onChange={e => setCustomFields(e.target.value)}  
+              
+            />
+          </div>
+
+          <div className="submit-container">
+            <button type="submit">Criar Set</button>
+            <button type="button">Adicionar Campo</button>
+          </div>
+
+          </form>
         </Main>
       </Container>
     </>

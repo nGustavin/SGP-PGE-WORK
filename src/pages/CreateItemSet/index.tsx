@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Header from '../../components/Header'
 import api from '../../services/api'
 import {CreateItemWrapper, Container,} from '../../styles/pages/showItemSet'
@@ -15,11 +15,17 @@ interface ItemParams{
   id: string;
 }
 
+interface Items {
+  id: number;
+  room: string;
+}
+
 export default function CreateItemSet() {
 
   const params = useParams<ItemParams>()
 
   const [ itemSet, setItemSet ] = useState<Set>() 
+  const [ items, setItems ] = useState<Items[]>([])
 
   
 
@@ -28,9 +34,21 @@ export default function CreateItemSet() {
       setItemSet(response.data)  
     })
   }, [params.id])
+  
+
+  useEffect(() => {
+    api.get('items').then(response => {
+      setItems(response.data)
+    })
+  }, [])
 
 
+  function roomCount(){
+    let rooms = 0
+    items.map(item => rooms+=1)
 
+    return (rooms)
+  }
 
   return(
     <>
@@ -41,21 +59,18 @@ export default function CreateItemSet() {
       <div className="item-image"> </div>
       <h1 className="title"> {itemSet?.name} </h1>
       <div id="room-container">
-        <h2 className="room">Salas: 290</h2>
+        <h2 className="room">Salas: {roomCount()}</h2>
        
       </div>
       <div id="roomValues-container">
-      <p className="room-values"> 
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
-            105 103 102 203 402 504 606 702
+      <div className="room-values"> 
+            {items.map(item => {
+              return(
+                <h1 key={item.id}>{item.room}</h1>
+              )
+            })}
      
-        </p>
+      </div>
       </div>
       <div id="amount-container">
         <h2 className="amount">Quantidade:</h2>
@@ -69,6 +84,12 @@ export default function CreateItemSet() {
       
       
     </CreateItemWrapper>
+
+    <div className="submit-container">
+      <Link to="/create-item">
+        <button type="submit"> Criar Novo Item </button>
+     </Link>
+    </div>
     </Container>
     </>
   )
