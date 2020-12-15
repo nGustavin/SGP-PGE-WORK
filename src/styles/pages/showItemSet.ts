@@ -29,25 +29,6 @@ export const CreateItemWrapper = styled.div`
                        'BA BA';
   padding: 30px;
   
-  > .create-item{
-    background: #4652fd;
-    width: 310px;
-    height: 34px;
-    outline: none;
-    transition: 0.3s;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0px 0px 0px 2px #e8e8e8;
-    text-decoration: none;
-
-    :hover{
-      cursor: pointer;
-      background:#FFF;
-      box-shadow: 0px 0px 0px 2px black;
-      color: black;
-      
-    }
-  }
 
   > .item-image {
     background: black;
