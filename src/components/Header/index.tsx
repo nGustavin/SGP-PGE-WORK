@@ -41,7 +41,7 @@ const Header: React.FC<Props> = ({haveArrowLeft}) => {
             </Link>
           )
         })}   
-      </datalist> 
+      </datalist>
 
       <h1 className="header-title">SGP-PGE</h1>
     </Container>
