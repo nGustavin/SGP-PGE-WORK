@@ -8,7 +8,7 @@ export interface ButtonProps{
 
 const CreateItemButton: React.FC  <ButtonProps> = (ButtonProps) => {
   return(
-    <Link to="/create-item-set">
+    <Link to="/create-item">
     <CreateItem>
       <CreateItemIcon className="crosshair-icon" />
     </CreateItem>

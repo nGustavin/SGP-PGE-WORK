@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import Header from '../../components/Header/index'
 import api from '../../services/api'
 import {Container, Main} from '../../styles/pages/createItem'
@@ -16,66 +16,81 @@ export default function CreateItem() {
   const [ patrimony, setPatrimony ] = useState('')
   const [ about, setAbout ] = useState('')
   const [ room, setRoom ] = useState('')
+  const [ name, setName] = useState('')
+  const [ amount, setAmount] = useState('')
+  const [ avaliable, setAvaliable] = useState('')
   const [ customFields, setCustomFields ] = useState('')
   // const [ avaliable, setAvaliable] = useState('')
 
+  
   async function onSubmit(event: FormEvent){
 
     event.preventDefault()
 
-    console.log({
-      patrimony,
-      about,
-      // avaliable,
-      room,
-      customFields
-    })
+    
 
     const data = new FormData()
 
+    data.append('name', name)
+    data.append('avaliable', avaliable)
     data.append('patrimony', patrimony)
     data.append('about', about)
-    // data.append('avaliable', avaliable)
     data.append('room', room)
     data.append('customFields', customFields)
 
-    await api.post('items', data)
+    // useEffect(() => {
+      // api.get('/items').then(response =>{
+        // console.log(response.data)
+      // })
+    // }, [])
+    console.log({name, amount, avaliable, patrimony, about, room, customFields})
+
+    await api.post('/items', data)
+
+    //http://localhost:3333/items
 
     alert('Cadastro realizado com sucesso!')
 
   }
 
-  const [ itemSets, setItemsets ] = useState<item[]>([])
-
-  useEffect(() => {
-    api.get('item-sets').then(response => {
-      setItemsets(response.data)
-    })
-  }, [])
-
-
   return(
     <>
-      <Header/>
+      <Header haveArrowLeft/>
       <Container>
       
         <Main>
         <form id="form" onSubmit={onSubmit}>
-        <div className="droplist-container">
-
-        <label className="droplist"> Choose a Set </label>
-
-        <select name="pets" id="set-select">
-          {itemSets.map( itemSet => {
-            return(
-              <option key={itemSet.id} value={itemSet.name}> {itemSet.name} </option>
-            )
-          }) }
-            
-           
-        </select>
-        </div>
         
+        <div className="field-container">
+                <label>Nome</label>
+                <input
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={e => setName(e.target.value)}  
+                />
+              </div>
+
+              <div className="field-container">
+                <label>Disponivel</label>
+                <input
+                  name="avaliable"
+                  type="text"
+                  value={avaliable}
+                  onChange={e => setAvaliable(e.target.value)}  
+                  
+                />
+              </div>
+              
+              <div className="field-container">
+                <label>Quantidade</label>
+                <input
+                  name="amount"
+                  type="text"
+                  value={amount}
+                  onChange={e => setAmount(e.target.value)}  
+                />  
+              </div>
 
           <div className="field-container">
             <label>Patrimonio</label>
@@ -119,7 +134,7 @@ export default function CreateItem() {
           </div>
 
           <div className="submit-container">
-            <button type="submit">Criar Set</button>
+            <button type="submit">Criar Item</button>
             <button type="button">Adicionar Campo</button>
           </div>
 

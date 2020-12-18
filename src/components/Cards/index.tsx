@@ -14,9 +14,9 @@ interface Item {
     id: number;
     url: string;
   }>
-  // images: Array<{
-  //   url: string;
-  // }>
+   images: Array<{
+     url: string;
+   }>
 }
 
 function Card() {
@@ -35,11 +35,11 @@ function Card() {
       <Wrapper>
       {items.map(item => {
         return(
-          <Link to={`/item-sets/${item.id}`}>
+          <Link to={`/item-view/`}>
           <div className="card-container" key={item.id}>
             <div className="flex-container">
               <div className="image-container">
-                <img src={item.image[0].url}   alt={item.name} className="card-image"/>
+                <img src={monitorImage}   alt={item.name} className="card-image"/>
               </div>
             <span className="title"> {[item.name]} </span>
             <strong className="amount">Quantidade: <span> {[item.amount]} </span> </strong>
