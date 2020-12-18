@@ -9,7 +9,7 @@ interface Item {
   id: string;
   name: string;
   amount: number;
-  avaliable: number;
+  avaliable: boolean;
   image: Array<{
     id: number;
     url: string;
@@ -35,15 +35,15 @@ function Card() {
       <Wrapper>
       {items.map(item => {
         return(
-          <Link to={`/item-view/`}>
-          <div className="card-container" key={item.id}>
+          <Link to={`/item-view/${item.id}`} key={item.id}>
+          <div className="card-container" >
             <div className="flex-container">
               <div className="image-container">
                 <img src={monitorImage}   alt={item.name} className="card-image"/>
               </div>
             <span className="title"> {[item.name]} </span>
             <strong className="amount">Quantidade: <span> {[item.amount]} </span> </strong>
-            <strong className="avaliable">Disponivel: <span> {[item.avaliable]} </span> </strong>
+            <strong className="avaliable">Disponivel: <span> {item.avaliable ? 'SIM' : 'NAO'} </span> </strong>
         </div>
       </div>
       </Link>
